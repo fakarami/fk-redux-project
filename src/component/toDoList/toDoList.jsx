@@ -1,7 +1,22 @@
-import React from 'react'
+import React from "react";
+import AddInput from "./addInput";
+import { Card, ListGroup } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import ListItems from "./listItems";
 
 export default function ToDoList() {
+  const workList = useSelector((state) => state.todolist.works);
   return (
-    <div>toDoList</div>
-  )
+    <>
+      <Card style={{ width: "25rem", margin: "auto", marginTop: 50 }}>
+        <Card.Header>
+          <AddInput />
+        </Card.Header>
+
+        <ListGroup variant="flush">
+          {workList.map((work) => (<ListItems w={work} key={work.title} />))}
+        </ListGroup>
+      </Card>
+    </>
+  );
 }
