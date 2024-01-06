@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   works: [
-    { title: "woek1", done: false },
-    { title: "woek2", done: false },
-    { title: "woek3", done: false },
+    { title: "work1", done: false },
+    { title: "work2", done: false },
+    { title: "work3", done: false },
   ],
   value: "",
 };
@@ -23,9 +23,13 @@ export const todolistSlice = createSlice({
     delWork: (state, action) => {
       state.works.splice(action.payload, 1);
     },
+    checkBox: (state, action) => {
+      state.works[action.payload].done =!state.works[action.payload].done;
+      console.log("hello");
+    },
   },
 });
 
-export const { addInput, addWork, delWork } = todolistSlice.actions;
+export const { addInput, addWork, delWork, checkBox } = todolistSlice.actions;
 
 export default todolistSlice.reducer;

@@ -1,18 +1,31 @@
 import React from "react";
 import { Button, ListGroup } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { delWork } from "../../utils/slices/todolistSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { checkBox, delWork } from "../../utils/slices/todolistSlice";
 
-export default function ListItems({ w,index }) {
-  const dispatch=useDispatch()
+export default function ListItems({ w, index }) {
+  const done = useSelector((state) => state.todolist.works[index].done);
+  const dispatch = useDispatch();
   return (
     <>
       <ListGroup.Item className="d-flex">
-        <input type="checkbox" />
-        <div style={{ flexGrow: 1 }}> {w.title}</div>
-        <Button variant="outline-warning"
-        onClick={()=>dispatch(delWork(index))}
-        >x</Button>
+        <input type="checkbox" onChange={() => dispatch(checkBox(index))} />
+        <div
+          style={{
+            flexGrow: 1,
+            textDecoration: done === true ? "line-through" : "none",
+            color: done === true ? "gray" : "black",
+          }}
+        >
+          {" "}
+          {w.title}
+        </div>
+        <Button
+          variant="outline-warning"
+          onClick={() => dispatch(delWork(index))}
+        >
+          x
+        </Button>
         <Button variant="outline-success">e</Button>
       </ListGroup.Item>
     </>
