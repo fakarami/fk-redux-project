@@ -6,14 +6,15 @@ const initialState = {
     { title: "woek2", done: false },
     { title: "woek3", done: false },
   ],
+  value: "hi",
 };
 
 export const todolistSlice = createSlice({
   name: "todolist",
   initialState,
   reducers: {
-    addWork: (state) => {
-      state.value -= 1;
+    addInput: (state, action) => {
+      state.value = action.payload;
     },
   },
 });
