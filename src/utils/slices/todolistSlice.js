@@ -6,7 +6,7 @@ const initialState = {
     { title: "woek2", done: false },
     { title: "woek3", done: false },
   ],
-  value: "hi",
+  value: "",
 };
 
 export const todolistSlice = createSlice({
@@ -16,9 +16,13 @@ export const todolistSlice = createSlice({
     addInput: (state, action) => {
       state.value = action.payload;
     },
+    addWork: (state, action) => {
+      state.works.push({ title: action.payload, done: false });
+      state.value = "";
+    },
   },
 });
 
-export const { addWork } = todolistSlice.actions;
+export const { addInput, addWork } = todolistSlice.actions;
 
 export default todolistSlice.reducer;

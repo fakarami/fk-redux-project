@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { addInput, addWork } from "../../utils/slices/todolistSlice";
 
 export default function AddInput() {
   const addInputValue = useSelector((state) => state.todolist.value);
@@ -12,10 +13,14 @@ export default function AddInput() {
         <input
           type="text"
           value={addInputValue}
-          onChange={(e) => dispatch(AddInput(e.target.value))}
+          onChange={(e) => dispatch(addInput(e.target.value))}
         />
       </label>
-      <Button variant="outline-primary" className="m-1 p-1">
+      <Button
+        variant="outline-primary"
+        className="m-1 p-1"
+        onClick={() => dispatch(addWork(addInputValue))}
+      >
         Add
       </Button>
     </>
