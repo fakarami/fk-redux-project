@@ -14,7 +14,9 @@ export default function ToDoList() {
         </Card.Header>
 
         <ListGroup variant="flush">
-          {workList.map((work) => (<ListItems w={work} key={work.title} />))}
+          {workList.map((work, index) => (
+            <ListItems w={work} key={work.title} index={index} />
+          ))}
         </ListGroup>
       </Card>
     </>

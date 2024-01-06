@@ -20,9 +20,12 @@ export const todolistSlice = createSlice({
       state.works.push({ title: action.payload, done: false });
       state.value = "";
     },
+    delWork: (state, action) => {
+      state.works.splice(action.payload, 1);
+    },
   },
 });
 
-export const { addInput, addWork } = todolistSlice.actions;
+export const { addInput, addWork, delWork } = todolistSlice.actions;
 
 export default todolistSlice.reducer;

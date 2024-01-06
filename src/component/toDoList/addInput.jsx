@@ -18,7 +18,7 @@ export default function AddInput() {
       </label>
       <Button
         variant="outline-primary"
-        className="m-1 p-1"
+        className="m-1 p-2"
         onClick={() => dispatch(addWork(addInputValue))}
       >
         Add
