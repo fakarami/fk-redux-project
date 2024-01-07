@@ -24,8 +24,7 @@ export const todolistSlice = createSlice({
       state.works.splice(action.payload, 1);
     },
     checkBox: (state, action) => {
-      state.works[action.payload].done =!state.works[action.payload].done;
-      console.log("hello");
+      state.works[action.payload].done = !state.works[action.payload].done;
     },
   },
 });

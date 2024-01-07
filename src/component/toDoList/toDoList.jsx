@@ -8,7 +8,15 @@ export default function ToDoList() {
   const workList = useSelector((state) => state.todolist.works);
   return (
     <>
-      <Card style={{ width: "25rem", margin: "auto", marginTop: 50 }}>
+      <Card
+        style={{
+          width: "25rem",
+          margin: "auto",
+          marginTop: 50,
+          backgroundColor: "#b91646",
+          color: "white",
+        }}
+      >
         <Card.Header>
           <AddInput />
         </Card.Header>

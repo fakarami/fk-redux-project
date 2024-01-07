@@ -9,15 +9,15 @@ export default function AddInput() {
   return (
     <>
       <label>
-        Add new Work:{" "}
+        Add new Work :{" "}
         <input
           type="text"
           value={addInputValue}
           onChange={(e) => dispatch(addInput(e.target.value))}
         />
-      </label>
+      </label>{" "}
       <Button
-        variant="outline-primary"
+        variant="outline-light"
         className="m-1 p-2"
         onClick={() => dispatch(addWork(addInputValue))}
       >
