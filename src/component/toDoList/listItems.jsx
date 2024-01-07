@@ -9,30 +9,24 @@ export default function ListItems({ w, index }) {
   const [editInputValue, setEditInputValue] = useState(w.title);
   return (
     <>
-      <ListGroup.Item style={{ display: "flex", backgroundColor: "#fbf3e4" }}>
-        <input type="checkbox" onChange={() => dispatch(checkBox(index))} />
-        <div
+      <ListGroup.Item style={{ display: "flex"}}>
+        <input type="checkbox" onChange={() => dispatch(checkBox(index))} />{" "}
+        <input
+          type="text"
           style={{
             flexGrow: 1,
+            borderWidth: 0,
+            backgroundColor: "inherit",
+            overflow: "scroll",
             textDecoration: done === true ? "line-through" : "none",
             color: done === true ? "gray" : "black",
+            margin: 5,
           }}
-        >
-          {" "}
-          <input
-            type="text"
-            style={{
-              borderWidth: 0,
-              backgroundColor: "inherit",
-              overflow: "scroll",
-            }}
-            value={editInputValue}
-            onChange={(e) =>setEditInputValue(e.target.value)}
-          />
-        </div>
+          value={editInputValue}
+          onChange={(e) => setEditInputValue(e.target.value)}
+        />
         <Button
           variant="outline-danger"
-          className="p-1 m-1"
           onClick={() => dispatch(delWork(index))}
         >
           x

@@ -9,7 +9,7 @@ export default function AddInput() {
   return (
     <>
       <label>
-        Add new Work :{" "}
+        Add new task :{" "}
         <input
           type="text"
           value={addInputValue}
