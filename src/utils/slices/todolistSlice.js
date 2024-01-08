@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  works: [
-    { title: "work1", done: false },
-    { title: "work2", done: false },
-    { title: "work3", done: false },
-  ],
+  works: [],
   value: "",
 };
 
