@@ -17,9 +17,10 @@ export const todolistSlice = createSlice({
       state.value = action.payload;
     },
     addWork: (state) => {
-      console.log(state.value);
       state.value === ""
         ? alert("Enter the task text")
+        : state.works.map((t) => t.title).includes(state.value)
+        ? alert("This task has already been added")
         : state.works.push({
             title: state.value,
             done: false,
