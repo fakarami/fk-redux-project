@@ -27,6 +27,7 @@ export default function ListItems({ w, index }) {
         />
         <Button
           variant="outline-danger"
+          className="m-1 p-2"
           onClick={() => dispatch(delWork(index))}
         >
           x

@@ -16,10 +16,14 @@ export const todolistSlice = createSlice({
     addInput: (state, action) => {
       state.value = action.payload;
     },
-    addWork: (state, action) => {
-      state.value !== ""
-        ? state.works.push({ title: action.payload, done: false })
-        : alert("Enter the task text");
+    addWork: (state) => {
+      console.log(state.value);
+      state.value === ""
+        ? alert("Enter the task text")
+        : state.works.push({
+            title: state.value,
+            done: false,
+          });
       state.value = "";
     },
     delWork: (state, action) => {

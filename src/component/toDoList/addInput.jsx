@@ -14,12 +14,13 @@ export default function AddInput() {
           type="text"
           value={addInputValue}
           onChange={(e) => dispatch(addInput(e.target.value))}
+          autoFocus
         />
       </label>{" "}
       <Button
         variant="outline-light"
         className="m-1 p-2"
-        onClick={() => dispatch(addWork(addInputValue))}
+        onClick={() => dispatch(addWork())}
       >
         Add
       </Button>
